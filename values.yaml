@@ -4,20 +4,13 @@
 
 replicaCount: 1
 
-openvasd:
-  replicas: 2
-  image:
-    repository: elysiansky/capstone-openvas-openvasd
-    tag: 0ec50cd-amd64
-  service:
-    type: ClusterIP
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: 100m
-      memory: 128Mi
+
+image:
+  repository: elysiansky/capstone-openvas-openvasd
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: 0ec50cd-amd64
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -113,3 +106,18 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+openvasd:
+  replicas: 2
+  image:
+    repository: elysiansky/capstone-openvas-openvasd
+    tag: 0ec50cd-amd64
+  service:
+    type: ClusterIP
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
