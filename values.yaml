@@ -9,7 +9,7 @@ image:
   repository: elysiansky/capstone-openvas-openvasd
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 0ec50cd-amd64
+  tag: c940ab6-amd64
 
 imagePullSecrets: []
 nameOverride: ""
@@ -111,7 +111,7 @@ openvasd:
   replicas: 2
   image:
     repository: elysiansky/capstone-openvas-openvasd
-    tag: 0ec50cd-amd64
+    tag: c940ab6-amd64
   service:
     type: ClusterIP
   resources:
